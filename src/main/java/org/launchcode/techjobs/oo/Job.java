@@ -93,4 +93,39 @@ public class Job {
     public int getId() {
         return id;
     }
-}
+
+    @Override
+    public String toString() {
+        String newLine = System.lineSeparator();
+        String dna = "Data not available";
+        if (location.getValue() == null || location.getValue().equals("")) {
+            location.setValue(dna);}
+
+         if (employer.getValue() == null || employer.getValue().equals("")) {
+            employer.setValue(dna);}
+
+        if (coreCompetency.getValue() == null || coreCompetency.getValue().equals("")) {
+            coreCompetency.setValue(dna);}
+
+        if (positionType.getValue() == null || positionType.getValue().equals("")) {
+            positionType.setValue(dna);}
+
+        if (name == null || name.isEmpty()) {
+            name = dna;
+        }
+
+
+
+        return newLine +
+                    "ID: " + getId() + newLine +
+                    "Name: " + getName() + newLine +
+                    "Employer: " + getEmployer() + newLine +
+                    "Location: " + getLocation() + newLine +
+                    "Position Type: " + getPositionType() + newLine +
+                    "Core Competency: " + getCoreCompetency() +
+                    newLine;
+
+        }
+
+    }
+
